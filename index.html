@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sofia Laurent — International Fashion Model | Portfolio</title>
+  <meta name="description" content="Official portfolio of Sofia Laurent, award-winning international fashion model. Featured in Vogue, Elle, and Harper's Bazaar. Based in Paris and New York." />
+  <meta name="keywords" content="fashion model, portfolio, Sofia Laurent, Paris, New York, Milan, fashion photography" />
+  <meta name="author" content="Sofia Laurent" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sofialaurent.com/" />
+  <meta property="og:title" content="Sofia Laurent — International Fashion Model" />
+  <meta property="og:description" content="Award-winning fashion model portfolio with work in editorial, runway, and commercial photography." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://sofialaurent.com/" />
+  <meta property="twitter:title" content="Sofia Laurent — International Fashion Model" />
+  <meta property="twitter:description" content="Award-winning fashion model portfolio with work in editorial, runway, and commercial photography." />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200" />
+  
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  
+  <!-- Preload critical fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" />
+  
+  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "Sofia Laurent",
+    "jobTitle": "Fashion Model",
+    "url": "https://sofialaurent.com/",
+    "image": "https://images.unsplash.com/photo-1542596594-649edbc13630?w=400",
+    "sameAs": [
+      "https://instagram.com/sofialaurent"
+    ],
+    "workLocation": [
+      {
+        "@type": "City",
+        "name": "Paris"
+      },
+      {
+        "@type": "City",
+        "name": "New York"
+      },
+      {
+        "@type": "City",
+        "name": "Milan"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#home" class="skip-to-main">Skip to main content</a>
+
+  <!-- NAVIGATION -->
+  <header class="navbar" id="navbar" role="banner">
+    <a href="#home" class="logo" aria-label="Sofia Laurent Home">SOFIA LAURENT</a>
+    <nav aria-label="Primary navigation">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="nav-backdrop" id="navBackdrop"></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#measurements">Stats</a></li>
+        <li><a href="#reel">Reel</a></li>
+        <li><a href="#press">Press</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero" role="region" aria-label="Hero banner with introduction">
+    <div class="hero-image" role="img" aria-label="Fashion model portrait"></div>
+    <div class="hero-content">
+      <p class="hero-sub">INTERNATIONAL FASHION MODEL</p>
+      <h1 class="hero-title">SOFIA<br/>LAURENT</h1>
+      <p class="hero-locations">PARIS · NEW YORK · MILAN</p>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">SCROLL ↓</div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section" role="region" aria-label="Portfolio gallery">
+    <div class="section-header reveal">
+      <span class="section-number" aria-hidden="true">01</span>
+      <h2>Portfolio</h2>
+    </div>
+
+    <div class="filter-buttons reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="editorial">Editorial</button>
+      <button class="filter-btn" data-filter="commercial">Commercial</button>
+      <button class="filter-btn" data-filter="runway">Runway</button>
+      <button class="filter-btn" data-filter="beauty">Beauty</button>
+    </div>
+
+    <div class="gallery" id="gallery" role="region" aria-label="Portfolio gallery items">
+      <div class="gallery-item" data-category="editorial" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&fm=webp 1x, https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800" alt="Editorial shoot 1 - Vogue Italia" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Editorial — Vogue Italia</div>
+      </div>
+      <div class="gallery-item" data-category="commercial" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&fm=webp 1x, https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800" alt="Commercial photography - Chanel" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Commercial — Chanel</div>
+      </div>
+      <div class="gallery-item" data-category="runway" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&fm=webp 1x, https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800" alt="Runway show - Paris Fashion Week" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Runway — Paris FW</div>
+      </div>
+      <div class="gallery-item" data-category="beauty" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1506634572416-48cdfe530110?w=400&fm=webp 1x, https://images.unsplash.com/photo-1506634572416-48cdfe530110?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1506634572416-48cdfe530110?w=800" alt="Beauty photography - Dior" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Beauty — Dior</div>
+      </div>
+      <div class="gallery-item" data-category="editorial" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&fm=webp 1x, https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800" alt="Editorial shoot 2 - Harper's Bazaar" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Editorial — Harper's Bazaar</div>
+      </div>
+      <div class="gallery-item" data-category="commercial" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&fm=webp 1x, https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800" alt="Commercial photography - Zara" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Commercial — Zara</div>
+      </div>
+      <div class="gallery-item" data-category="runway" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&fm=webp 1x, https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800" alt="Runway show - Milan Fashion Week" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Runway — Milan FW</div>
+      </div>
+      <div class="gallery-item" data-category="beauty" role="button" tabindex="0">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&fm=webp 1x, https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=800&fm=webp 2x" type="image/webp" />
+          <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=800" alt="Beauty photography - YSL" loading="lazy" />
+        </picture>
+        <div class="gallery-caption">Beauty — YSL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about" role="region" aria-label="About Sofia Laurent">
+    <div class="about-image reveal">
+      <img src="https://images.unsplash.com/photo-1542596594-649edbc13630?w=800" alt="Sofia Laurent professional portrait" loading="lazy" />
+    </div>
+    <div class="about-text reveal">
+      <span class="section-number" aria-hidden="true">02</span>
+      <h2>About</h2>
+      <p>
+        Sofia Laurent is an international fashion model based between Paris and New York. Known for her striking features and versatile presence, she has graced the pages of leading publications and walked the runways for some of the world's most celebrated designers.
+      </p>
+      <p>
+        With a background in dance and a degree in art history, Sofia brings a unique artistic sensibility to every project. She speaks French, English, and Italian fluently.
+      </p>
+      <ul class="about-list">
+        <li><strong>Languages:</strong> French, English, Italian</li>
+        <li><strong>Based in:</strong> Paris / New York</li>
+        <li><strong>Experience:</strong> 8+ years</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MEASUREMENTS -->
+  <section id="measurements" class="section measurements" role="region" aria-label="Model statistics and measurements">
+    <div class="section-header reveal">
+      <span class="section-number" aria-hidden="true">03</span>
+      <h2>Stats</h2>
+    </div>
+    <div class="stats-grid reveal">
+      <div class="stat">
+        <span class="stat-label">Height</span>
+        <span class="stat-value">178 cm</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Bust</span>
+        <span class="stat-value">82 cm</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Waist</span>
+        <span class="stat-value">60 cm</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Hips</span>
+        <span class="stat-value">88 cm</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dress</span>
+        <span class="stat-value">EU 34</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Shoe</span>
+        <span class="stat-value">EU 39</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Hair</span>
+        <span class="stat-value">Brown</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Eyes</span>
+        <span class="stat-value">Green</span>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center; margin-top: 3rem;">
+      <a href="#contact" class="btn-outline">Request Comp Card</a>
+    </div>
+  </section>
+
+  <!-- REEL -->
+  <section id="reel" class="section reel" role="region" aria-label="Video reel">
+    <div class="section-header reveal">
+      <span class="section-number" aria-hidden="true">04</span>
+      <h2>Reel</h2>
+    </div>
+    <div class="video-wrapper reveal">
+      <iframe src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen aria-label="Sofia Laurent video reel"></iframe>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section id="press" class="section press" role="region" aria-label="Press and publications">
+    <div class="section-header reveal">
+      <span class="section-number" aria-hidden="true">05</span>
+      <h2>Press</h2>
+    </div>
+    <div class="press-grid reveal">
+      <div class="press-item">VOGUE</div>
+      <div class="press-item">ELLE</div>
+      <div class="press-item">HARPER'S BAZAAR</div>
+      <div class="press-item">MARIE CLAIRE</div>
+      <div class="press-item">NUMÉRO</div>
+      <div class="press-item">W MAGAZINE</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact" role="region" aria-label="Contact information">
+    <div class="section-header reveal">
+      <span class="section-number" aria-hidden="true">06</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-content reveal">
+      <p class="contact-intro">Send a message or reach out directly</p>
+      
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Full name">
+          <span class="form-error" role="alert"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Email address">
+          <span class="form-error" role="alert"></span>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-label="Message"></textarea>
+          <span class="form-error" role="alert"></span>
+        </div>
+        <button type="submit" class="btn-outline" aria-label="Submit contact form">Send Message</button>
+        <div id="formStatus" role="status" aria-live="polite" aria-atomic="true"></div>
+      </form>
+
+      <div class="contact-direct" style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+        <p class="contact-intro">Or email directly</p>
+        <a href="mailto:bookings@example.com" class="contact-email" aria-label="Email for bookings">bookings@example.com</a>
+        <div class="social-links" style="margin-top: 2rem;">
+          <a href="https://instagram.com/sofialaurent" target="_blank" rel="noopener noreferrer" aria-label="Sofia Laurent Instagram profile">Instagram</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Agency representation">Agency</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <p>© 2025 Sofia Laurent. All rights reserved.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
+    <div class="lightbox-loading" id="lightboxLoading" aria-hidden="true">
+      <div class="spinner"></div>
+    </div>
+    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox-counter" id="lightboxCounter" role="status" aria-live="polite" aria-atomic="true"></div>
+    <button class="lightbox-nav" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox-nav" id="lightboxNext" aria-label="Next image">›</button>
+  </div>
+
+  <script src="service-worker-register.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
