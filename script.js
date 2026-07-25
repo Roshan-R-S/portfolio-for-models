@@ -232,6 +232,25 @@ try {
     if (e.target === lightbox) closeLightbox();
   });
 
+  // Touch swipe support for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+  const SWIPE_THRESHOLD = 50;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+    // Only trigger swipe if horizontal movement is dominant
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      navigateLightbox(deltaX < 0 ? 'next' : 'prev');
+    }
+  }, { passive: true });
+
   // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
@@ -423,3 +442,121 @@ try {
 // ===== ANALYTICS SNIPPET (Optional) =====
 // Replace with your analytics tracking code
 // Example: Google Analytics, Mixpanel, etc.
+
+// ===== STATS COUNT-UP ANIMATION =====
+try {
+  const statValues = document.querySelectorAll('.stat-value[data-count]');
+
+  const countUp = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = prefix + Math.floor(ease * target) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countUp(entry.target);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statValues.forEach(el => statsObserver.observe(el));
+} catch (error) {
+  logError('Stats count-up', error);
+}
+
+// ===== 3D PARALLAX HERO EFFECT =====
+try {
+  const heroSection = document.querySelector('.hero');
+  const heroBgImage = document.querySelector('.hero-image');
+
+  if (heroSection && heroBgImage) {
+    let isHovering = false;
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    let rafId = null;
+
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    const animateParallax = () => {
+      currentX = lerp(currentX, targetX, 0.07);
+      currentY = lerp(currentY, targetY, 0.07);
+      heroBgImage.style.transform = `scale(1.08) translate(${currentX}px, ${currentY}px)`;
+
+      const settled = Math.abs(currentX - targetX) < 0.05 && Math.abs(currentY - targetY) < 0.05;
+      if (isHovering || !settled) {
+        rafId = requestAnimationFrame(animateParallax);
+      } else {
+        // Restore Ken Burns animation when cursor leaves and position settles
+        heroBgImage.style.transform = '';
+        heroBgImage.style.animationPlayState = 'running';
+        rafId = null;
+      }
+    };
+
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      targetX = x * 35;
+      targetY = y * 22;
+
+      if (!isHovering) {
+        isHovering = true;
+        heroBgImage.style.animationPlayState = 'paused';
+        if (!rafId) rafId = requestAnimationFrame(animateParallax);
+      }
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+      isHovering = false;
+      targetX = 0;
+      targetY = 0;
+      // RAF continues, lerping back to (0,0), then restores Ken Burns
+    });
+  }
+} catch (error) {
+  logError('Parallax hero', error);
+}
+
+// ===== DARK / LIGHT THEME TOGGLE =====
+try {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (themeIcon) themeIcon.textContent = theme === 'dark' ? '\u2600' : '\u263d';
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    }
+  };
+
+  // Apply saved theme (default: dark)
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  applyTheme(savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+} catch (error) {
+  logError('Theme toggle', error);
+}
